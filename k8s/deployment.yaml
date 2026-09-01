@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: k8s-production-app
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: k8s-production-app
+
+  template:
+    metadata:
+      labels:
+        app: k8s-production-app
+
+    spec:
+      containers:
+        - name: k8s-production-app
+          image: k8s-production-app:1.0
+          imagePullPolicy: IfNotPresent
+
+          ports:
+            - containerPort: 8000
+
+          envFrom:
+            - configMapRef:
+                name: k8s-production-config
+
+            - secretRef:
+                name: k8s-production-secret
+
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3
+
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 10
+            periodSeconds: 15
+            timeoutSeconds: 2
+            failureThreshold: 3

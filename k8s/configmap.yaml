@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: k8s-production-config
+data:
+  APP_NAME: "Kubernetes Production Deployment"
+  APP_ENV: "production"

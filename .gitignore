@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+
+# Environment files
+.env
+.env.*
+
+# Kubernetes secrets
+k8s/secret.yaml
+
+# IDE / OS
+.vscode/
+.DS_Store
+Thumbs.db
