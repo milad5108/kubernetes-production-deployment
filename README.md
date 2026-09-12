@@ -36,3 +36,35 @@ Current application version:
 
 ```text
 v1.1
+
+---
+
+# Screenshots
+
+## Kubernetes Resources
+
+![Kubernetes Resources](screenshots/01-kubernetes-resources.png)
+
+---
+
+## Ingress Validation
+
+![Ingress Validation](screenshots/02-ingress-validation.png)
+
+---
+
+## HPA Scale Up
+
+![HPA Scale Up](screenshots/03-hpa-scale-up.png)
+
+---
+
+## HPA Scale Down
+
+![HPA Scale Down](screenshots/04-hpa-scale-down.png)
+
+---
+
+## Metrics Server
+
+![Metrics Server](screenshots/05-metrics-server.png)
